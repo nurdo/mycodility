@@ -1,22 +1,22 @@
 public class MinAvgTwoSlice {
-	
+
 	static int solution(int[] A) {
-        int N = A.length;
+		int N = A.length;
 
 		if (N == 2) {
 			return 0;
 		}
-		
+
 		int[] sumA= new int[N+1];
 		sumA[0] = 0;
 		for (int i=0; i < N; i++) {
 			sumA[i+1] = sumA[i] + A[i];
 		}
-		
+
 		int currentInd = 0;
 		int minInd = 0;
 		double minAve = (double) sumA[2]/2;
-				
+
 		while (currentInd < N-1) {
 			int i = 1;
 			while (currentInd+i<N && i<4) {
@@ -27,7 +27,7 @@ public class MinAvgTwoSlice {
 				}
 				i++;
 			}
-			
+
 			if (currentInd+4 < N && A[currentInd+4]==A[currentInd+3] && A[currentInd+3]==A[currentInd+2] 
 					&& A[currentInd+2]==A[currentInd+1] && A[currentInd+1]==A[currentInd]) {
 				currentInd += 5;
@@ -40,7 +40,7 @@ public class MinAvgTwoSlice {
 				currentInd++;
 			}
 		}
-		
+
 		return minInd;
 	}
 
