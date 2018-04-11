@@ -1,6 +1,7 @@
 public class MinAvgTwoSlice {
     
     static int solution(int[] A) {
+        
         int N = A.length;
         
         if (N == 2) {
