@@ -19,7 +19,7 @@ public class MinAvgTwoSlice {
         
         while (currentInd < N-1) {
             int i = 1;
-            while (currentInd+i<N && i<4) {
+            while (currentInd+i<N && i<3) {
                 double ave = (double) (sumA[currentInd+i+1] - sumA[currentInd])/(i+1);
                 if (ave < minAve) {
                     minAve = ave;
@@ -34,7 +34,7 @@ public class MinAvgTwoSlice {
                 while (currentInd<N && A[currentInd] == A[currentInd-1]) {
                     currentInd++;
                 }
-                currentInd -= 3;
+                currentInd -= 2;
             }
             else {
                 currentInd++;
