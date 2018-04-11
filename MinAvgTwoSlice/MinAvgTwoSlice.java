@@ -34,7 +34,9 @@ public class MinAvgTwoSlice {
                 while (currentInd<N && A[currentInd] == A[currentInd-1]) {
                     currentInd++;
                 }
-                currentInd -= 2;
+                if (currentInd < N) {
+                    currentInd -= 2;
+                }
             }
             else {
                 currentInd++;
